@@ -8,6 +8,12 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
+import ProtectedRoute from './components/ProtectedRoute'
+
+
+
+
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -51,6 +57,14 @@ function App() {
     </Router>
   )
 }
+<Route
+  path="/dashboard"
+  element={
+    <ProtectedRoute>
+      <Dashboard />
+    </ProtectedRoute>
+  }
+/>
 export default App
 
 
